@@ -102,10 +102,20 @@ public class ArraySkills {
         // 10. Prompt the user for a String and then perform a linear search of the array
         //  to see if that string is or is not in the array. Print if it is or is not found.
 
-//        Scanner keyboard = new Scanner;
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("\nEnter a string of characters and I'll search for it.");
+        String input = keyboard.nextLine();
+        boolean found = false;
 
+        for (String i : myData) {
+            if (i.equals(input))
+                    found = true;
+        }
 
-
+        if (found)
+            System.out.println("Found it!");
+        else
+            System.out.println("Sorry, that string wasn't found.");
 
 
         // 11. Remove the item at index 4 of the array by shifting everything after it one spot to the left.
