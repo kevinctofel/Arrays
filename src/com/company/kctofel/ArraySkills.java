@@ -1,4 +1,4 @@
-
+package com.company.kctofel;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -49,8 +49,8 @@ public class ArraySkills {
 
         // 6. Print the array from beginning to end.
         System.out.println("\nArray of names:");
-        for (int i = 0; i < myData.length; i++) {
-            System.out.println(myData[i]);
+        for (String myDatum : myData) {
+            System.out.println(myDatum);
         }
 
         // 7. Shuffle the array of strings
