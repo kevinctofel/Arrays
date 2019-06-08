@@ -120,9 +120,21 @@ public class ArraySkills {
 
         // 11. Remove the item at index 4 of the array by shifting everything after it one spot to the left.
         // This means your array should have one empty index at the end after the shift (delete the duplicate item at the end).
+        int removeIndex = 4;
+        for (int i = removeIndex; i < myData.length-1; i++){
+            myData[i] = myData[i+1];
+            if (myData[i] == myData[myData.length-1])
+                myData[myData.length-1] = "";
+        }
+
+        for (int i = 0; i < myData.length; i++) {   // Show that String at index 4 was removed
+            System.out.println(myData[i]);          // and that all other Strings shifted
+        }
 
         // 12. Create a new array that is twice as big as the current array and copy all of the items to the new array.
         // When complete, swap references so our old array gets garbage collected and the new array is pointed to by your array variable myData.
+
+
 
         // 13. Prompt the user to enter 2 numbers within the range of the array's length. If the first is larger than the second print backwards from that index to the first.
         // If the second is larger than the first, print forward in the array from the first index to the second.
