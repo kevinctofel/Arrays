@@ -134,6 +134,18 @@ public class ArraySkills {
         // 12. Create a new array that is twice as big as the current array and copy all of the items to the new array.
         // When complete, swap references so our old array gets garbage collected and the new array is pointed to by your array variable myData.
 
+        String[] newData;
+        int newArraySize = (myData.length - 1) * 2; // This gets rid of the extra, empty value at the end
+        newData = new String[newArraySize];
+        for (int i = 0; i < myData.length; i++) {
+            newData[i] = myData[i];
+        }
+
+        for (int j = newData.length; j < newArraySize; j++){
+                newData[j] = "";
+        }
+
+        myData = newData; // Point myData reference to newData array. Old myData array will be garbage collected
 
 
         // 13. Prompt the user to enter 2 numbers within the range of the array's length. If the first is larger than the second print backwards from that index to the first.
