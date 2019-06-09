@@ -150,6 +150,23 @@ public class ArraySkills {
 
         // 13. Prompt the user to enter 2 numbers within the range of the array's length. If the first is larger than the second print backwards from that index to the first.
         // If the second is larger than the first, print forward in the array from the first index to the second.
+
+
+        System.out.println("\nEnter an number between 1 and " + myData.length);
+        int num1 = keyboard.nextInt();
+        System.out.println("\nEnter another number between 1 and " + myData.length);
+        int num2 = keyboard.nextInt();
+
+        if (num2 < num1) {
+            for (int i = num1 - 1; i >= 0; i--) {
+                System.out.println(myData[i]);
+            }
+        }
+        else if (num2 > num1){
+            for (int i=num1; i<=num2; i++){
+                System.out.println(myData[i]);
+            }
+        }
     }
 
 }
