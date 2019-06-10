@@ -4,7 +4,7 @@ CIS112 - Week 1
 
  */
 
-package com.company.kctofel;
+package com.company.kctofel; // NOTE: Comment this line if not running within package
 
 import java.util.Random;
 import java.util.Scanner;
@@ -120,9 +120,9 @@ public class ArraySkills {
         }
 
         if (found)
-            System.out.println("Found it!");
+            System.out.println("Found it!\n");
         else
-            System.out.println("Sorry, that string wasn't found.");
+            System.out.println("Sorry, that string wasn't found.\n");
 
 
         // 11. Remove the item at index 4 of the array by shifting everything after it one spot to the left.
@@ -152,8 +152,10 @@ public class ArraySkills {
         myData = newData; // Point myData reference to newData array.
 
 
-        // 13. Prompt the user to enter 2 numbers within the range of the array's length. If the first is larger than the second print backwards from that index to the first.
+        // 13. Prompt the user to enter 2 numbers within the range of the array's length.
+        // If the first is larger than the second print backwards from that index to the first.
         // If the second is larger than the first, print forward in the array from the first index to the second.
+        // Note: No data validation added for now
 
         // Prompt for and read two Scanner input objects to get integers
 
@@ -163,12 +165,12 @@ public class ArraySkills {
         int num2 = keyboard.nextInt();
 
         if (num2 < num1) {                          // Case 1: Loop and print array from smaller index to the first
-            for (int i = num1 - 1; i >= 0; i--) {
+            for (int i = num1; i >= 0; i--) {
                 System.out.println(myData[i]);
             }
         }
         else if (num2 > num1){                      // Case 2: Loop and print array from first index to the second
-            for (int i=num1; i<=num2; i++){
+            for (int i = num1; i <= num2; i++){
                 System.out.println(myData[i]);
             }
         }
