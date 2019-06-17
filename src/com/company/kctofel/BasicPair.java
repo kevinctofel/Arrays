@@ -1,6 +1,6 @@
 package com.company.kctofel;
 
-public class BasicPair implements PairInterface<Object> {
+public class BasicPair <Object> implements PairInterface<Object> {
 
    private Object first;
    private Object second;

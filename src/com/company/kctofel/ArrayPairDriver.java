@@ -1,10 +1,10 @@
 package com.company.kctofel;
 
-public class Sample {
+public class ArrayPairDriver {
 
     public static void main (String[] args)
     {
-        PairInterface <String> myPair = new BasicPair <> ("apple","peach");
+        PairInterface myPair = new ArrayPair <> (9, 11);
 
         System.out.print(myPair.getFirst() + " ");
         System.out.println(myPair.getSecond());
