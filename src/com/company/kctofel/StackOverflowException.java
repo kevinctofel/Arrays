@@ -1,4 +1,4 @@
-
+package com.company.kctofel;
 
 public class StackOverflowException extends RuntimeException
 {

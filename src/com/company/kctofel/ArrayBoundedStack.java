@@ -1,3 +1,5 @@
+package com.company.kctofel;
+
 //----------------------------------------------------------------
 // ArrayBoundedStack.java    by Dale/Joyce/Weems         Chapter 2
 //
@@ -8,8 +10,6 @@
 // default size and one that allows the calling program to 
 // specify the size.
 //----------------------------------------------------------------
-
-import ch02.stacks.StackInterface;
 
 public class ArrayBoundedStack<T> implements StackInterface<T> 
 {
@@ -75,5 +75,65 @@ public class ArrayBoundedStack<T> implements StackInterface<T>
   // Returns true if this stack is full, otherwise returns false.
   {              
     return (topIndex == (elements.length - 1));
+  }
+
+  @Override
+  public String toString(ArrayBoundedStack value, int topIndex) {
+    return null;
+  }
+
+  public String toString(int topIndex) {
+    String output = "";
+    for(int i=0; i<topIndex+1; i++){
+      output += elements[i] + " ";
+    }
+    return output;
+  }
+
+  public int size() {
+    return topIndex + 1;
+  }
+
+  public void popSome(int count) throws StackUnderflowException{
+    for (int i=count; i>0; i--){
+      if(!isEmpty())
+      {
+        elements[topIndex] = null;
+        topIndex = topIndex-1;
+        if(isEmpty())
+          throw new StackUnderflowException("Pop attempted on an empty stack.");
+      }
+      else
+        throw new StackUnderflowException("Pop attempted on an empty stack.");
+
+      }
+    }
+
+  public boolean swapStart() {
+    if (topIndex <= 1){
+      return false;
+    }
+    else {
+      Object T = elements[topIndex];
+      elements[topIndex] = elements[topIndex-1];
+      elements[topIndex-1] = (T) T;
+      return true;
+    }
+  }
+
+  public T poptop(){
+    {
+      if (isEmpty())
+        throw new StackUnderflowException("Pop attempted on an empty stack.");
+      else
+      {
+        T temp = elements[topIndex];
+        elements[topIndex] = null;
+        topIndex--;
+        return temp;
+      }
+
+    }
+
   }
 }
