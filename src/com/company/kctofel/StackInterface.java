@@ -6,7 +6,6 @@
 //----------------------------------------------------------------------------
 
 package com.company.kctofel;
-//import ch02.stacks.*;
 
 public interface StackInterface<T>
 {

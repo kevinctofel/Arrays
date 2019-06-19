@@ -82,7 +82,7 @@ public class ArrayBoundedStack<T> implements StackInterface<T>
     return null;
   }
 
-  public String toString(int topIndex) {
+  public String toString(int topIndex) {  // ToString for looping through and printing the stack
     String output = "";
     for(int i=0; i<topIndex+1; i++){
       output += elements[i] + " ";
@@ -90,30 +90,27 @@ public class ArrayBoundedStack<T> implements StackInterface<T>
     return output;
   }
 
-  public int size() {
+  public int size() {                     // Return the amount of elements in the stack, i.e.: size.
     return topIndex + 1;
   }
 
   public void popSome(int count) throws StackUnderflowException{
     for (int i=count; i>0; i--){
-      if(!isEmpty())
+      if(!isEmpty())                      // If the stack isn't empty, even the first time through the loop
       {
         elements[topIndex] = null;
         topIndex = topIndex-1;
-        if(isEmpty())
-          throw new StackUnderflowException("Pop attempted on an empty stack.");
       }
       else
-        throw new StackUnderflowException("Pop attempted on an empty stack.");
-
+        throw new StackUnderflowException("Pop attempted on an empty stack.");  // Stack is empty, so throw exception
       }
     }
 
-  public boolean swapStart() {
+  public boolean swapStart() {      // Check to see if stack has 2 or less elements
     if (topIndex <= 1){
       return false;
     }
-    else {
+    else {                          // Stack has more than 2 elements, so swap top two elements
       Object T = elements[topIndex];
       elements[topIndex] = elements[topIndex-1];
       elements[topIndex-1] = (T) T;
@@ -123,11 +120,11 @@ public class ArrayBoundedStack<T> implements StackInterface<T>
 
   public T poptop(){
     {
-      if (isEmpty())
+      if (isEmpty())                // Empty stack check
         throw new StackUnderflowException("Pop attempted on an empty stack.");
       else
       {
-        T temp = elements[topIndex];
+        T temp = elements[topIndex];    // Save the top element temporarily then delete it and return that temp element
         elements[topIndex] = null;
         topIndex--;
         return temp;
